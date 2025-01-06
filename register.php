@@ -2,14 +2,13 @@
 header("Accept: application/json");
 header("Access-Control-Allow-Origin: *");
 
-include('db_connection.php'); // Include your database connection file
+include('db_connection.php'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    // Hash the password (for security)
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashedPassword')";
