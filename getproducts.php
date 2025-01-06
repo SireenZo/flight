@@ -15,7 +15,7 @@ if ($result = mysqli_query($con,$sql))
        $emparray[] = $row;
 
   echo(json_encode($emparray));
-  // Free result set
+  
   mysqli_free_result($result);
   mysqli_close($con);
 }
