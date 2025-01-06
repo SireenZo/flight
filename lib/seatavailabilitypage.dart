@@ -24,7 +24,7 @@ class _SeatAvailabilityPageState extends State<SeatAvailabilityPage> {
 
   Future<void> fetchAvailableSeats() async {
     final response = await http
-        .get(Uri.parse('https://bariamikawi.000webhostapp.com/getSeats.php'));
+        .get(Uri.parse('https://flight.fwh.is/getSeats.php'));
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(response.body);
@@ -57,9 +57,7 @@ class _SeatAvailabilityPageState extends State<SeatAvailabilityPage> {
                   final isSeatSelected = selectedSeat == seat['seatNumber'];
 
                   return GestureDetector(onTap: () {
-                    // Pass the selected seat back to the previous page
                     Navigator.pop(context, seat['seatNumber']);
-                    // Optionally, you can display a message or perform further actions here
                     print('Selected Seat: ${seat['seatNumber']}');
                   },
                     child: Container(
