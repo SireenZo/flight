@@ -36,7 +36,7 @@ class _AccountUsState extends State<AccountUs> {
 
   Future<void> loginUser() async {
     final response = await http.post(
-      Uri.parse("https://www.infinityfree.com/login.php"),
+      Uri.parse("https://flight.fwh.is/login.php"),
       body: {
         "email": emailController.text,
         "password": passController.text,
