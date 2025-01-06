@@ -3,7 +3,7 @@
 
 require_once 'db_connection.php';
 
-// Fetch seat data
+
 $sql = "SELECT seatNumber, isOccupied FROM seats";
 $result = mysqli_query($con, $sql);
 
@@ -17,12 +17,12 @@ $seats = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $seats[] = [
         'seatNumber' => $row['seatNumber'],
-        'isOccupied' => (int)$row['isOccupied'], // Convert to integer
+        'isOccupied' => (int)$row['isOccupied'], 
     ];
 }
 
-// Close the database connection
+
 mysqli_close($con);
 
-// Return seat data in JSON format without any additional output
+
 echo json_encode(['seats' => $seats]);
