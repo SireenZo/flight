@@ -99,7 +99,7 @@ class _BookingFlightState extends State<BookingFlight> {
     };
     print(jsonEncode(bookingData));
     final response = await http.post(
-      Uri.parse('https://www.infinityfree.com/book_flight.php'),
+      Uri.parse('https://flight.fwh.is/book_flight.php'),
       body: jsonEncode(bookingData),
     );
 
@@ -309,7 +309,6 @@ class _BookingFlightState extends State<BookingFlight> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        // Navigate to SeatAvailabilityPage and wait for seat selection
                         final selectedSeat = await Navigator.push(
                           context,
                           MaterialPageRoute(
