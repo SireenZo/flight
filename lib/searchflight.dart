@@ -26,7 +26,7 @@ class _SearchFlightState extends State<SearchFlight> {
   }
 
   Future<void> searchFlight(int flightId) async {
-    final url = 'https://bariamikawi.000webhostapp.com/searchFlight.php';
+    final url = 'https://flight.fwh.is/searchFlight.php';
     final headers = {'Content-Type': 'application/json'};
     final body = jsonEncode({'flightId': flightId});
 
