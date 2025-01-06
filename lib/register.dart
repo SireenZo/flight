@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
   final passController = TextEditingController();
   Future<void> registerUser() async {
     final response = await http.post(
-      Uri.parse("https://bariamikawi.000webhostapp.com/register.php"),
+      Uri.parse("https://flight.fwh.is/register.php"),
       body: {
         "name": nameController.text,
         "email": emailController.text,
@@ -29,11 +29,9 @@ class _SignUpState extends State<SignUp> {
     if (response.statusCode == 200) {
       SharedPreferences sp = await SharedPreferences.getInstance();
       sp.setString('user_data', jsonEncode(jsonDecode(response.body)['user']));
-      // Handle successful registration
       print("Registration successful");
       _navigateToLoginPage();
     } else {
-      // Handle registration failure
       print("Registration failed");
     }
   }
