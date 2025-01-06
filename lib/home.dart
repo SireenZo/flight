@@ -73,7 +73,7 @@ class FlightData {
 
 class FlightRepo {
   Future<http.Response> getflight() async {
-    final url = Uri.parse('https://www.infinityfree.com/getflights.php');
+    final url = Uri.parse('https://flight.fwh.is/getflights.php');
     final response = await http.get(url);
     print('API Response: ${response.body}');
     return response;
