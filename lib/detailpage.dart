@@ -21,7 +21,7 @@ class DetailsPage extends StatelessWidget {
               height: 200,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assests/a2.jpg'), // Corrected asset path
+                  image: AssetImage('assests/a2.jpg'), 
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(12.0),
